@@ -16,8 +16,8 @@ import com.xebia.retail.factorypattern.Duration;
 import com.xebia.retail.factorypattern.Employee;
 import com.xebia.retail.factorypattern.GeneralDiscount;
 import com.xebia.retail.factorypattern.User;
-import com.xebia.retail.model.ProductDTO;
-import com.xebia.retail.model.UserDTO;
+import com.xebia.retail.model.ProductDetails;
+import com.xebia.retail.model.UserDetails;
 
 /**
  * @author Mudassir
@@ -27,26 +27,27 @@ import com.xebia.retail.model.UserDTO;
 public class RetailApplication {
 	
 	/**
-	 * @param name
-	 * @param item
+	 * @param loggedUserName
+	 * @param prodPurchased
 	 * @return
 	 * @throws ParseException
 	 */
-	public User getDiscount(String name,String item) throws ParseException {
+	//Reading Data from CSV files based on loggedUserName & prodPurchased
+	public User getUserDetails(String loggedUserName,String prodPurchased) throws ParseException {
 		
 		ReadDataFromCSV obj=new ReadDataFromCSV();
 		
-		//Getting user details fromCSV File based on customer name
-		UserDTO userDetails=obj.readCustomerData(name);
+		//Getting user details fromCSV File based on loggedUserName
+		UserDetails userDetails=obj.readCustomerData(loggedUserName);
 
 		String empName=userDetails.getCustName();
 	
 		String empType =userDetails.getCustType();
 	
-		String duration=userDetails.getRegistrationDate();
+		String joiningDate=userDetails.getRegistrationDate();
 	
-		//Product Details from csv file based om item
-		ProductDTO prodDetails=obj.readProductData(item);
+		//Product Details from csv file based on prodPurchased
+		ProductDetails prodDetails=obj.readProductData(prodPurchased);
 		
 		
 		String prodName=prodDetails.getProdName();
@@ -69,7 +70,7 @@ public class RetailApplication {
 			}
 			else if ( (empType.equals("Others")) && (!prodCategory.equals("Groceries"))  ){
 				
-				int totalDuration=getDuration(duration);
+				int totalDuration=getDuration(joiningDate);
 				
 				System.out.println("Time Period is:"+totalDuration);
 				
@@ -113,6 +114,7 @@ public class RetailApplication {
 	 * @return
 	 * @throws ParseException
 	 */
+	//calculating duration of user
 	public static int getDuration(String date) throws ParseException {
 
 		int duration = 0;
@@ -159,13 +161,9 @@ public class RetailApplication {
 		
 		RetailApplication obj=new RetailApplication();
 		
-		User user=obj.getDiscount("Mudassir","TV"); // kindly provide the customer name & prod name from csv file 
+		User user=obj.getUserDetails("Mudassir","TV"); // kindly provide the customer name & prod name from csv file 
 		
-		int discount=user.discount(); //It will return applicable discount to the customer
-										
-	
-		//if(discount==null)
-	
+		int discount=user.getDiscount(); //It will return applicable discount to the customer
 		System.out.println("Applicable Discount:"+discount);
 		if(discount>=1) {
 		ShopingCart cart=new ShopingCart();  // calculating total bill

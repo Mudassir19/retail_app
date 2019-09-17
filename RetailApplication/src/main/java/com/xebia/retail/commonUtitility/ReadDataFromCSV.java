@@ -3,8 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import com.xebia.retail.model.ProductDTO;
-import com.xebia.retail.model.UserDTO;
+import com.xebia.retail.model.ProductDetails;
+import com.xebia.retail.model.UserDetails;
 
 public class ReadDataFromCSV {
 
@@ -12,14 +12,14 @@ public class ReadDataFromCSV {
 	 * @param custName
 	 * @return
 	 */
-	public  UserDTO readCustomerData(String custName) {
+	//getting customer data based on custName
+	public  UserDetails readCustomerData(String custName) {
 		 
-		 	UserDTO dto=new UserDTO();
+		 	UserDetails dto=new UserDetails();
 
 		 	InputStream inputStream =  getClass().getClassLoader().getResourceAsStream("UserDetails.csv");
 	  
-	  
-	        BufferedReader br = null;
+		 	BufferedReader br = null;
 	        String line = "";
 	        String cvsSplitBy = ",";
 	        
@@ -68,9 +68,10 @@ public class ReadDataFromCSV {
 	 * @param item
 	 * @return
 	 */
-	public  ProductDTO readProductData(String item) {
+	//@getting product data based on prodPurchased
+	public  ProductDetails readProductData(String prodName) {
 		 
-		 	ProductDTO dto=new ProductDTO();
+		 	ProductDetails dto=new ProductDetails();
 		 	InputStream inputStream = 
 		 	       getClass().getClassLoader().getResourceAsStream("ProductDetails.csv");
 		 	
@@ -91,7 +92,7 @@ public class ReadDataFromCSV {
 	                // use comma as separator
 	              userDetails = line.split(cvsSplitBy);
 
-	              if(item.equals(userDetails[0])) {
+	              if(prodName.equals(userDetails[0])) {
 
 	                	dto.setProdName(userDetails[0]);
 	                	dto.setProdCategory(userDetails[1]);

@@ -22,7 +22,7 @@ public class TestRetailApplication {
 		//double amt=990;
 		
 		//Expected Discount % & customer name & prod name from CSV file
-		assertEquals(30, obj.getDiscount(name,prodName).discount()); // kindly provide the customer name & prod name from csv file and expected pecentage discount
+		assertEquals(30, obj.getUserDetails(name,prodName).getDiscount()); // kindly provide the customer name & prod name from csv file and expected pecentage discount
 		
 	}
 	

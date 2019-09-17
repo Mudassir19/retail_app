@@ -10,15 +10,15 @@ public class ShopingCart {
 
 		System.out.println("Total Amount is:"+totalAmount);
 		
-		int addDis = 0;
+		int addDiscount = 0;
 		
 		double s,finalAmount = 0;
 		
 		if(totalAmount>100) {
 			
-			addDis=(int) (totalAmount/100)*5;
-			finalAmount=totalAmount-addDis;
-			System.out.println("User is eligible for additional discount:"+addDis);
+			addDiscount=(int) (totalAmount/100)*5;
+			finalAmount=totalAmount-addDiscount;
+			System.out.println("User is eligible for additional discount:"+addDiscount);
 		}
 		
 		if(discount>1) {
@@ -28,7 +28,7 @@ public class ShopingCart {
 			System.out.println("User is eligible for % "+discount+" Discount:"+perAmount);
 			totalAmount=totalAmount-perAmount;
 
-			finalAmount=totalAmount-addDis;
+			finalAmount=totalAmount-addDiscount;
 				
 		}
 		

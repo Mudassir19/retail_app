@@ -1,6 +1,6 @@
 package com.xebia.retail.model;
 
-public class ProductDTO {
+public class ProductDetails {
 	
 	private String prodName;
 	private String prodCategory;

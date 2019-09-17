@@ -1,6 +1,6 @@
 package com.xebia.retail.model;
 
-public class UserDTO {
+public class UserDetails {
 	
 	
 	private String custName;
