@@ -1,6 +1,6 @@
 package com.xebia.retail.factorypattern;
 
-public interface User {
+public interface Discount {
 	
 	public int getDiscount();
 

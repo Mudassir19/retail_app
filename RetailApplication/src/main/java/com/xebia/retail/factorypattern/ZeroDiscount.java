@@ -1,6 +1,6 @@
 package com.xebia.retail.factorypattern;
 
-public class DiscountNotApplicable implements User{
+public class ZeroDiscount implements Discount{
 
 	public int getDiscount() {
 		

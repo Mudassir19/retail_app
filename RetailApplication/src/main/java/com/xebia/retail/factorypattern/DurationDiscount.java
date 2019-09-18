@@ -1,6 +1,6 @@
 package com.xebia.retail.factorypattern;
 
-public class Duration implements User{
+public class DurationDiscount implements Discount{
 
 	//if Duration of user>=2 years, applicable for 5% discount
 	public int getDiscount() {

@@ -1,6 +1,6 @@
 package com.xebia.retail.factorypattern;
 
-public class Employee implements User {
+public class EmployeeDiscount implements Discount {
 
 	//Offering discount 30% if user is Employee of store
 	public int getDiscount() {

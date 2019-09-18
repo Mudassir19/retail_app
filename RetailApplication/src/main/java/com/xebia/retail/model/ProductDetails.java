@@ -8,7 +8,7 @@ public class ProductDetails {
 	
 	@Override
 	public String toString() {
-		return "ProductDTO [prodName=" + prodName + ", prodCategory=" + prodCategory + ", price=" + price + "]";
+		return "ProductDetails [prodName=" + prodName + ", prodCategory=" + prodCategory + ", price=" + price + "]";
 	}
 	
 	public String getProdName() {

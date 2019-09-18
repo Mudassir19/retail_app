@@ -29,7 +29,7 @@ public class UserDetails {
 	
 	@Override
 	public String toString() {
-		return "UserDTO [custName=" + custName + ", custType=" + custType + ", registrationDate=" + registrationDate
+		return "UserDetails [custName=" + custName + ", custType=" + custType + ", registrationDate=" + registrationDate
 				+ "]";
 	}
 	
