@@ -100,7 +100,6 @@ public class RetailApplication {
 			cal.setTime(date2);
 			String formatedDate = cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH) + 1) + "/"
 					+ cal.get(Calendar.YEAR);
-			// logger.info("formatedDate : " + formatedDate);
 
 			String[] splitDate = formatedDate.split("/");
 
@@ -131,7 +130,7 @@ public class RetailApplication {
 
 		RetailApplication obj = new RetailApplication();
 
-		Discount discountDetails = obj.getDiscountDetails("Ravi", "TV"); // kindly provide the customer name & prod
+		Discount discountDetails = obj.getDiscountDetails("Mudassir", "TV"); // kindly provide the customer name & prod
 																				// name from csv
 		int discount = discountDetails.getDiscount(); // It will return applicable discount to the customer
 
