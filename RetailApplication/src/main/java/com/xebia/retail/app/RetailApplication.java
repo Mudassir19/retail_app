@@ -8,8 +8,8 @@ import java.time.Period;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.xebia.retail.commonUtitility.ReadDataFromCSV;
-import com.xebia.retail.commonUtitility.ShopingCart;
+import com.xebia.retail.common_utility.ReadDataFromCSV;
+import com.xebia.retail.common_utility.ShopingCart;
 import com.xebia.retail.factorypattern.AffiliateCustomerDiscount;
 import com.xebia.retail.factorypattern.Discount;
 import com.xebia.retail.factorypattern.DurationDiscount;

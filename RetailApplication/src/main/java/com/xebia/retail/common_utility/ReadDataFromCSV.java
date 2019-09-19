@@ -1,4 +1,4 @@
-package com.xebia.retail.commonUtitility;
+package com.xebia.retail.common_utility;
 
 import java.io.BufferedReader;
 import java.io.IOException;

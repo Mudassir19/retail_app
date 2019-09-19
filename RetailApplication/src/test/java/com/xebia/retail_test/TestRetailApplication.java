@@ -1,4 +1,4 @@
-package com.xebia.retailTest;
+package com.xebia.retail_test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,7 +7,7 @@ import java.text.ParseException;
 import org.junit.Test;
 
 import com.xebia.retail.app.RetailApplication;
-import com.xebia.retail.commonUtitility.ShopingCart;
+import com.xebia.retail.common_utility.ShopingCart;
 
 public class TestRetailApplication {
 
